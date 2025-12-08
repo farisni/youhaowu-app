@@ -1,16 +1,17 @@
 <template>
   <header class='app-header'>
     <div class="container">
-      <h1 class="logo">
-        <RouterLink to="/">麦子商城</RouterLink>
-      </h1>
+      <!--<h1 class="logo">-->
+      <!--  <RouterLink to="/">麦子商城</RouterLink>-->
+      <!--</h1>-->
+      <img src="@/assets/images/logo.png" alt="" sizes="" srcset="">
       <ul class="app-header-nav">
         <li class="home">
           <RouterLink to="/">首页</RouterLink>
         </li>
-        <!--<li v-for="item in categoryList" :key="item.id">-->
-        <!--  <RouterLink active-class="active" :to="`/category/${item.id}`">{{ item.name }}</RouterLink>-->
-        <!--</li>-->
+        <li v-for="item in categoryList" :key="item.id">
+          <RouterLink active-class="active" :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
+        </li>
       </ul>
       <div class="search">
         <i class="iconfont icon-search"></i>
@@ -26,6 +27,19 @@
 // import HeaderCart from './HeaderCart.vue'
 // const categoryStore = useCategoryStore()
 // const { categoryList } = storeToRefs(categoryStore)
+
+
+import {onMounted, ref} from "vue";
+import api from "@/api/home"
+const categoryList = ref([]);
+
+const getCategory = async () => {
+  const resp = await api.getCategory()
+  categoryList.value = resp.result;
+}
+
+onMounted(()=>getCategory())
+
 </script>
 <style scoped lang='scss'>
 .app-header {
@@ -34,18 +48,22 @@
   .container {
     display: flex;
     align-items: center;
+    height: 100px;
+
+    img {
+      height: 80px;
   }
 
-  .logo {
-    width: 200px;
-
-    a {
-      display: block;
-      height: 132px;
-      width: 100%;
-      text-indent: -9999px;
-      background: url('@/assets/images/logo.png') no-repeat center 18px / contain;
-    }
+  //.logo {
+  //  width: 200px;
+  //
+  //  a {
+  //    display: block;
+  //    height: 132px;
+  //    width: 100%;
+  //    text-indent: -9999px;
+  //    background: url('@/assets/images/logo.png') no-repeat center 18px / contain;
+  //  }
   }
 
   .app-header-nav {
