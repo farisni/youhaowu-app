@@ -14,6 +14,7 @@ import NewGoods from './components/NewGoods.vue'
 import HotRecommended from './components/HotRecommend.vue'
 import Product from './components/Product.vue'
 </script>
-<style scoped>
-
+<style scoped lang="scss">
+.container {
+}
 </style>
