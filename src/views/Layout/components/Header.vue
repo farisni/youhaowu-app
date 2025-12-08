@@ -4,7 +4,8 @@
       <!--<h1 class="logo">-->
       <!--  <RouterLink to="/">麦子商城</RouterLink>-->
       <!--</h1>-->
-      <img src="@/assets/images/logo.png" alt="" sizes="" srcset="">
+      <RouterLink class="logo" to="/" />
+      <!--<img src="@/assets/images/logo.png" alt="" sizes="" srcset="">-->
       <ul class="app-header-nav">
         <li class="home">
           <RouterLink to="/">首页</RouterLink>
@@ -48,11 +49,19 @@ onMounted(()=>getCategory())
   .container {
     display: flex;
     align-items: center;
-    height: 100px;
+    height: 80px;
 
-    img {
+    //img {
+    //  height: 80px;
+    //
+    //}
+
+    .logo {
+      width: 200px;
       height: 80px;
-  }
+      background: url("@/assets/images/logo.png") no-repeat right 2px;
+      background-size: 160px auto;
+    }
 
   //.logo {
   //  width: 200px;

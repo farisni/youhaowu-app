@@ -1,3 +1,6 @@
 <template>
-  <h1>我是Home</h1>
+  <div style="height: 1500px">我是Home</div>
 </template>
+<style scoped>
+
+</style>
