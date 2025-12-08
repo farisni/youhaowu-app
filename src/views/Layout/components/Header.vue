@@ -1,11 +1,7 @@
 <template>
   <header class='app-header'>
     <div class="container">
-      <!--<h1 class="logo">-->
-      <!--  <RouterLink to="/">麦子商城</RouterLink>-->
-      <!--</h1>-->
       <RouterLink class="logo" to="/" />
-      <!--<img src="@/assets/images/logo.png" alt="" sizes="" srcset="">-->
       <ul class="app-header-nav">
         <li class="home">
           <RouterLink to="/">首页</RouterLink>
@@ -24,22 +20,11 @@
   </header>
 </template>
 <script setup>
-// import { useCategoryStore } from '@/stores/category'
+import { useCategoryStore } from '@/stores/category'
 // import HeaderCart from './HeaderCart.vue'
-// const categoryStore = useCategoryStore()
-// const { categoryList } = storeToRefs(categoryStore)
+const categoryStore = useCategoryStore()
+const { categoryList } = storeToRefs(categoryStore)
 
-
-import {onMounted, ref} from "vue";
-import api from "@/api/home"
-const categoryList = ref([]);
-
-const getCategory = async () => {
-  const resp = await api.getCategory()
-  categoryList.value = resp.result;
-}
-
-onMounted(()=>getCategory())
 
 </script>
 <style scoped lang='scss'>
@@ -51,10 +36,6 @@ onMounted(()=>getCategory())
     align-items: center;
     height: 80px;
 
-    //img {
-    //  height: 80px;
-    //
-    //}
 
     .logo {
       width: 200px;
@@ -63,16 +44,6 @@ onMounted(()=>getCategory())
       background-size: 160px auto;
     }
 
-  //.logo {
-  //  width: 200px;
-  //
-  //  a {
-  //    display: block;
-  //    height: 132px;
-  //    width: 100%;
-  //    text-indent: -9999px;
-  //    background: url('@/assets/images/logo.png') no-repeat center 18px / contain;
-  //  }
   }
 
   .app-header-nav {

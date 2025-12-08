@@ -15,6 +15,9 @@ export default defineConfig({
     vue(),
     vueDevTools(),
     AutoImport({
+      imports:[
+        {pinia: ['storeToRefs']}
+      ],
       resolvers: [ElementPlusResolver()],
     }),
     Components({

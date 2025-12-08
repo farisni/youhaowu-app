@@ -21,22 +21,24 @@
 </template>
 <script setup>
 import { useScroll } from '@vueuse/core'
-// import { useCategoryStore } from '@/stores/category'
+import { useCategoryStore } from '@/stores/category'
 
 const { y } = useScroll(window)
 
-// const categoryStore = useCategoryStore()
-// const { categoryList } = storeToRefs(categoryStore)
-import {onMounted, ref} from "vue";
-import api from "@/api/home"
-const categoryList = ref([]);
+const categoryStore = useCategoryStore()
+const { categoryList } = storeToRefs(categoryStore)
 
-const getCategory = async () => {
-  const resp = await api.getCategory()
-  categoryList.value = resp.result;
-}
 
-onMounted(()=>getCategory())
+// import {onMounted, ref} from "vue";
+// // import api from "@/api/home"
+// // const categoryList = ref([]);
+// //
+// // const getCategory = async () => {
+// //   const resp = await api.getCategory()
+// //   categoryList.value = resp.result;
+// // }
+//
+// onMounted(()=>getCategory())
 
 </script>
 
