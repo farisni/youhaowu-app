@@ -108,9 +108,9 @@ $cover-width:240px;
       width: calc($home-width - $cover-width - 10px);
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
 
       li {
-        flex: 0 0 calc(100% / 4);
         > a {
           margin: 0 auto;
         }
