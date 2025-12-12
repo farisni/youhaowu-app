@@ -21,7 +21,7 @@ onMounted(() => getBanner())
 
 <style scoped lang='scss'>
 .home-banner {
-  width: 1240px; //
+  width: $home-width; //
   height: 500px;
   position: absolute;
   left: 0; // 距离左边让出Category位置 改banner和Category 位置
