@@ -44,13 +44,15 @@ const { categoryList } = storeToRefs(categoryStore)
 </script>
 
 <style scoped lang='scss'>
+$container-height:80px;
 .app-header-sticky {
   width: 100%;
-  height: 80px;
+  box-sizing: border-box;
+
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 999;
+  z-index: 999;  /* 确保导航栏在最前面，不被其他内容遮挡 */
   background-color: #fff;
   border-bottom: 1px solid #e4e4e4;
   // 此处为关键样式!!!
@@ -69,8 +71,10 @@ const { categoryList } = storeToRefs(categoryStore)
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 5px auto;
+
     > img{
-      height: 70px;
+      height: $container-height;
     }
 
   }

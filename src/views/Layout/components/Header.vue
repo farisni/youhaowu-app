@@ -38,9 +38,10 @@ const { categoryList } = storeToRefs(categoryStore)
     align-items: center;
     justify-content: space-between;
     height: 80px;
+    margin: 5px auto;
 
     > img{
-      height: 70px;
+      height: 80px;
     }
 
 
