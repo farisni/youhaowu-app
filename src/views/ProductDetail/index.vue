@@ -85,32 +85,32 @@
 
             </div>
           </div>
-          <!--<div class="goods-footer">-->
-          <!--  <div class="goods-article">-->
-          <!--    &lt;!&ndash; 商品详情 &ndash;&gt;-->
-          <!--    <div class="goods-tabs">-->
-          <!--      <nav>-->
-          <!--        <a>商品详情</a>-->
-          <!--      </nav>-->
-          <!--      <div class="goods-detail">-->
-          <!--        &lt;!&ndash; 属性 &ndash;&gt;-->
-          <!--        <ul class="attrs">-->
-          <!--          <li v-for="item in goods.details.properties" :key="item.value">-->
-          <!--            <span class="dt">{{ item.name }}</span>-->
-          <!--            <span class="dd">{{ item.value }}</span>-->
-          <!--          </li>-->
-          <!--        </ul>-->
-          <!--        &lt;!&ndash; 图片 &ndash;&gt;-->
-          <!--        <img v-for="img in goods.details.pictures" v-img-lazy="img" :key="img">-->
-          <!--      </div>-->
-          <!--    </div>-->
-          <!--  </div>-->
-          <!--  &lt;!&ndash; 24热榜+专题推荐 &ndash;&gt;-->
-          <!--  <div class="goods-aside">-->
-          <!--    <DetailHot :hot-type="1"/>-->
-          <!--    <DetailHot :hot-type="2" />-->
-          <!--  </div>-->
-          <!--</div>-->
+          <div class="goods-footer">
+            <div class="goods-article">
+              <!-- 商品详情 -->
+              <div class="goods-tabs">
+                <nav>
+                  <a>商品详情</a>
+                </nav>
+                <div class="goods-detail">
+                  <!-- 属性 -->
+                  <ul class="attrs">
+                    <li v-for="item in goods.details.properties" :key="item.value">
+                      <span class="dt">{{ item.name }}</span>
+                      <span class="dd">{{ item.value }}</span>
+                    </li>
+                  </ul>
+                  <!-- 图片 -->
+                  <img v-for="img in goods.details.pictures" v-img-lazy="img" :key="img">
+                </div>
+              </div>
+            </div>
+            <!-- 24热榜+专题推荐 -->
+            <div class="goods-aside">
+              <DetailHot :hot-type="1"/>
+              <DetailHot :hot-type="2" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
