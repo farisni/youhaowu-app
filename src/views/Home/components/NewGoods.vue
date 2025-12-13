@@ -2,8 +2,9 @@
   <Panel title="新鲜好物" sub-title="新鲜出炉 品质靠谱">
     <!-- 这里的内容会显示在 <slot /> 的位置 -->
     <ul class="goods-list">
-      <li v-for="item in newList" :key="item.id">
-        <RouterLink to="/">
+      <li v-for="item in newList"  :key="item.id">
+        <!--跳转商品详情-->
+        <RouterLink :to="`/detail/${item.id}`">
           <img :src="item.picture" alt="" />
           <p class="name">{{ item.name }}</p>
           <p class="price">&yen;{{ item.price }}</p>
