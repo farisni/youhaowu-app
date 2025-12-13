@@ -1,8 +1,11 @@
 <template>
-  <div class="app-header-sticky" :class="{ show: y > 78 }">
+  <!---->
+  <div class="app-header-sticky " :class="{ show: y > 78 }" >
     <div class="container">
       <RouterLink to="/" />
-      <img src="@/assets/images/youhaowu.svg" alt="">
+      <div class="logo">
+        <img src="@/assets/images/youhaowu.svg" alt="">
+      </div>
       <!-- 导航区域 -->
       <ul class="app-header-nav ">
         <li class="home">
@@ -48,7 +51,6 @@ $sticky-height:55px;
 .app-header-sticky {
   width: 100%;
   box-sizing: border-box;
-
   position: fixed;
   left: 0;
   top: 0;
@@ -70,25 +72,30 @@ $sticky-height:55px;
   .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 5px auto;
-    padding-left: 40px;
 
-    > img{
-      height: calc($sticky-height - 10px);
+    .logo {
+      width: 210px;
+      img {
+        float: right;
+        height: 45px;
+        background-color: #ffffff;
+      }
     }
 
   }
 
   .division {
     color: $mainColor;
+    width: 5px;
     font-size: 16px;
     font-weight: bold;
   }
 
   .right {
     height: $sticky-height;
-    width: 220px;
+    width: 170px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,10 +115,9 @@ $sticky-height:55px;
  ul.app-header-nav {
   width: 820px;
   display: flex;
-  justify-content: center;
   position: relative;
-   margin-left: 10px;
-  z-index: 998;
+
+   z-index: 998;
 
   li {
     margin-right: 40px;

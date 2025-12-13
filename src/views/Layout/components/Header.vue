@@ -41,10 +41,10 @@ const { categoryList } = storeToRefs(categoryStore)
     justify-content: space-around;
     height: 80px;
     margin: 5px auto;
-
     .logo {
       width: 210px;
       img{
+        float: right;
         height: 60px;
         background-color: #ffffff;
       }
@@ -54,7 +54,6 @@ const { categoryList } = storeToRefs(categoryStore)
   ul.app-header-nav {
     width: 820px;
     display: flex;
-    justify-content: center;
     position: relative;
     padding-right: 40px;
     z-index: 998;
@@ -84,7 +83,7 @@ const { categoryList } = storeToRefs(categoryStore)
   }
 
   .search {
-    width: 170px;
+    width: 180px;
     height: 32px;
     position: relative;
     border-bottom: 1px solid #e7e7e7;
