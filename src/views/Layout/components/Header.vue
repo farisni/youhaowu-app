@@ -56,6 +56,7 @@ const { categoryList } = storeToRefs(categoryStore)
     display: flex;
     justify-content: center;
     position: relative;
+    padding-right: 40px;
     z-index: 998;
 
     li {

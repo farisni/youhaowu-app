@@ -12,7 +12,7 @@
           <RouterLink active-class="active" :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
         </li>
       </ul>
-
+      <span class="division">|</span>
       <div class="right">
         <RouterLink to="/">品牌</RouterLink>
         <RouterLink to="/">专题</RouterLink>
@@ -44,7 +44,7 @@ const { categoryList } = storeToRefs(categoryStore)
 </script>
 
 <style scoped lang='scss'>
-$container-height:80px;
+$sticky-height:55px;
 .app-header-sticky {
   width: 100%;
   box-sizing: border-box;
@@ -72,23 +72,29 @@ $container-height:80px;
     align-items: center;
     justify-content: space-between;
     margin: 5px auto;
+    padding-left: 40px;
 
     > img{
-      height: 45px;
+      height: calc($sticky-height - 10px);
     }
 
   }
 
+  .division {
+    color: $mainColor;
+    font-size: 16px;
+    font-weight: bold;
+  }
 
   .right {
+    height: $sticky-height;
     width: 220px;
     display: flex;
-    text-align: center;
-    border-left: 2px solid $mainColor;
+    align-items: center;
+    justify-content: center;
 
     a {
-      width: 38px;
-      margin-right: 40px;
+      width: 60px;
       font-size: 16px;
       line-height: 1;
 
@@ -104,6 +110,7 @@ $container-height:80px;
   display: flex;
   justify-content: center;
   position: relative;
+   margin-left: 10px;
   z-index: 998;
 
   li {
