@@ -2,7 +2,7 @@
   <div class="app-header-sticky" :class="{ show: y > 78 }">
     <div class="container">
       <RouterLink to="/" />
-      <img src="@/assets/images/logo.png" alt="">
+      <img src="@/assets/images/youhaowu.svg" alt="">
       <!-- 导航区域 -->
       <ul class="app-header-nav ">
         <li class="home">
@@ -74,7 +74,7 @@ $container-height:80px;
     margin: 5px auto;
 
     > img{
-      height: $container-height;
+      height: 45px;
     }
 
   }
@@ -84,7 +84,6 @@ $container-height:80px;
     width: 220px;
     display: flex;
     text-align: center;
-    padding-left: 40px;
     border-left: 2px solid $mainColor;
 
     a {
@@ -100,10 +99,10 @@ $container-height:80px;
   }
 }
 
-.app-header-nav {
+ ul.app-header-nav {
   width: 820px;
   display: flex;
-  padding-left: 40px;
+  justify-content: center;
   position: relative;
   z-index: 998;
 

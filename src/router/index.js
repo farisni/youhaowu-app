@@ -26,6 +26,12 @@ const router = createRouter({
       component: Login
     }
   ],
+  scrollBehavior() {
+    // 滚动条每次刷新回到0位置（开始位置）
+    // todo 需要优化，不同页面滚动的起始位置不同
+    return {top:0}
+
+  }
 })
 
 export default router

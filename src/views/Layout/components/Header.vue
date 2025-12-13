@@ -2,7 +2,7 @@
   <header class='app-header'>
     <div class="container">
       <RouterLink  to="/" />
-      <img src="@/assets/images/logo.png" alt="">
+      <img src="@/assets/images/youhaowu.svg" alt="">
       <ul class="app-header-nav">
         <li class="home">
           <RouterLink to="/">首页</RouterLink>
@@ -36,21 +36,24 @@ const { categoryList } = storeToRefs(categoryStore)
   .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 80px;
     margin: 5px auto;
 
+
     > img{
-      height: 80px;
+      height: 60px;
+      width: 220px;
+      background-color: #ffffff;
     }
 
 
   }
 
-  .app-header-nav {
+  ul.app-header-nav {
     width: 820px;
     display: flex;
-    padding-left: 40px;
+    justify-content: center;
     position: relative;
     z-index: 998;
 
