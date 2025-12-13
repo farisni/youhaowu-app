@@ -54,13 +54,16 @@ const { categoryList } = storeToRefs(categoryStore)
   ul.app-header-nav {
     width: 820px;
     display: flex;
+
     position: relative;
-    padding-right: 40px;
+    padding-right: 2px; // 与吸顶的差值
     z-index: 998;
+    justify-content: space-evenly;
 
     li {
-      margin-right: 40px;
-      width: 38px;
+      flex: 0 0 calc(100%  /10);
+      //margin-right: 40px;
+      //width: 38px;
       text-align: center;
 
       a {
@@ -68,6 +71,7 @@ const { categoryList } = storeToRefs(categoryStore)
         line-height: 32px;
         height: 32px;
         display: inline-block;
+
 
         &:hover {
           color: $mainColor;
@@ -83,7 +87,7 @@ const { categoryList } = storeToRefs(categoryStore)
   }
 
   .search {
-    width: 180px;
+    width: 180px; // 170px + 10px
     height: 32px;
     position: relative;
     border-bottom: 1px solid #e7e7e7;

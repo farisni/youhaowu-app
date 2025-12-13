@@ -1,6 +1,6 @@
 <template>
   <!---->
-  <div class="app-header-sticky " :class="{ show: y > 78 }" >
+  <div class="app-header-sticky" :class="{ show: y > 78 }" >
     <div class="container">
       <RouterLink to="/" />
       <div class="logo">
@@ -120,8 +120,9 @@ $sticky-height:55px;
    z-index: 998;
 
   li {
-    margin-right: 40px;
-    width: 38px;
+    flex: 0 0 calc(100%/10);
+    //margin-right: 40px;
+    //width: 38px;
     text-align: center;
 
     a {
