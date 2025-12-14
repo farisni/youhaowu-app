@@ -104,17 +104,14 @@ const login = () => {
     // 校验通过
     if(valid) {
       const { account, password } = form.value
-      try {
-        await userStore.getUserInfo({ account, password })
-        ElMessage({
-          type: 'success',
-          message: '登录成功'
-        })
-        /*跳转到主页， replace 不回头*/
-        router.replace({ path: '/' })
-      }catch (e) {
-        ElMessage({type: 'error', message: e.response.data.message})
-      }
+      await userStore.getUserInfo({ account, password })
+      ElMessage({
+        type: 'success',
+        message: '登录成功'
+      })
+      /*跳转到主页， replace 不回头*/
+      router.replace({ path: '/' })
+
     }
   })
 }
