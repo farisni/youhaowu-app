@@ -1,6 +1,9 @@
 import axios from "axios";
 import {ElMessage} from "element-plus";
 import 'element-plus/theme-chalk/el-message.css'
+import { useUserStore } from '@/stores/userStore'
+
+
 const http = axios.create({
   baseURL:'http://pcapi-xiaotuxian-front-devtest.itheima.net',
   timeout:5000,
@@ -9,6 +12,13 @@ const http = axios.create({
 
 http.interceptors.request.use(
   (config) => {
+    // 请求携带token
+    const userStore = useUserStore()
+    const token = userStore.userInfo.token
+    // 存在token在请求头带上token
+    if(token) {
+      config.headers.Authorization = `Bearer ${token}`
+    }
     // 请求拦截器
     return config;
   },

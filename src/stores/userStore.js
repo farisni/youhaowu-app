@@ -6,7 +6,7 @@ export const useUserStore = defineStore(
   'user',
   // 回调
   () => {
-    // 获取用户数据
+    // 获取用户数据 ref是响应式数据
     const userInfo = ref({})
 
     // 获取购物车存储实例对象
@@ -37,12 +37,12 @@ export const useUserStore = defineStore(
 
     // 返回数据
     return {
-      userInfo,
-      getUserInfo,
-      clearUserInfo
+      userInfo, // 会被持久化
+      getUserInfo, // 方法不会被持久化
+      clearUserInfo // 方法不会被持久化
     }
   },
   {
     // pinia持久化
-    persist: true
+    persist: true // 持久化的对象是 return {} 中返回的所有响应式数据
   })
