@@ -138,8 +138,6 @@ const login = () => {
   })
 }
 </script>
-<style scoped lang="scss">
-</style>
 <style scoped lang='scss'>
 .login-header {
   background: #fff;
