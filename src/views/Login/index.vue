@@ -32,15 +32,15 @@
             <el-form ref="formRef" :model="form" :rules="rules"  status-icon  style="max-width: 300px">
               <!--label="用户"-->
               <el-form-item  label="" prop="account">
-                <el-input v-model="form.account">
+                <el-input v-model="form.account"   placeholder="请输入账号">
                   <template #prepend>
                     <el-button :icon="User" />
                   </template>
                 </el-input>
               </el-form-item>
               <!--label="密码"-->
-              <el-form-item  prop="password">
-                <el-input show-password v-model="form.password" >
+              <el-form-item  prop="password" >
+                <el-input show-password v-model="form.password" placeholder="请输入密码">
                   <template #prepend>
                     <el-button :icon="Lock" />
                   </template>
@@ -280,9 +280,16 @@ const login = () => {
 
     .el-form-item {
       margin-bottom: 22px;
-
       :deep(.el-form-item__error) {
         padding-top: 5px;
+      }
+
+    }
+
+    .el-form-item:last-of-type {
+      :deep(.el-form-item__error) {
+        //margin-top: -7px;
+        padding-top: 0;
       }
     }
 
