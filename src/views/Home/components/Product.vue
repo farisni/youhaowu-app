@@ -72,6 +72,7 @@ $cover-width:240px;
       img {
         width: 100%;
         height: 100%;
+        object-fit: cover; // 不拉伸图片
       }
 
       .label {
