@@ -48,7 +48,7 @@
               </el-form-item>
               <el-form-item  prop="agree">
                 <el-checkbox v-model="form.agree"  size="large">
-                  我已同意隐私条款和服务条款
+                  我已同意<a href="javascript:;">《隐私条款》</a>和<a href="javascript:;">《服务条款》</a>
                 </el-checkbox>
               </el-form-item>
               <el-button size="large" class="subBtn" @click="login">点击登录</el-button>
@@ -296,17 +296,25 @@ const login = () => {
     .el-input {
       width: 300px;
       height: 38px;
-      //margin-bottom: 10px;
-      //margin: 5px auto;
     }
 
 
-
-    .agree {
+    .el-checkbox {
+      //color: #333333;
+      font-weight: normal;
       a {
         color: #069;
+
       }
+      /*如果有is-checked这个类*/
+      &.is-checked {
+        a {
+          color: $yhwColor;
+        }
+      }
+
     }
+
 
     .btn {
       display: block;
