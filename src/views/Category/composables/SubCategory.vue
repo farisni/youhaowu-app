@@ -117,7 +117,8 @@ const load = async () => {
 }
 
 .sub-container {
-  padding: 20px 10px;
+  margin-top: 30px;
+  padding: 10px 10px;
   background-color: #fff;
 
   .body {
