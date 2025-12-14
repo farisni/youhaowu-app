@@ -1,4 +1,3 @@
-
 <template>
   <div class="cart">
     <a class="curr" href="javascript:;">

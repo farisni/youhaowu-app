@@ -74,11 +74,14 @@
               <!-- sku组件 -->
               <YhwSku :goods="goods" @change="skuChange"/>
                <!--数据组件-->
-              <el-input-number v-model="count" :min="1" />
+              <div class="number-box">
+                <span>数量</span>
+                <el-input-number v-model="count" :min="1" />
+              </div>
               <!-- 按钮组件 -->
               <div>
                 <!--addCart-->
-                <el-button size="large" class="btn" @click="addCart">
+                <el-button size="large" type="primary" class="btn" @click="addCart">
                   加入购物车
                 </el-button>
               </div>
@@ -123,8 +126,6 @@ import { useCartStore } from '@/stores/cartStore'
 import DetailHot from './components/DetailHot.vue'
 import { ElMessage } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
-// import ImageView from "@/components/ImageView/index.vue"
-// import YhwSku from '@/components/YhwSku/index.vue'
 
 const goods = ref({})
 const route = useRoute()
@@ -185,6 +186,20 @@ const addCart = () => {
     .spec {
       flex: 1;
       padding: 30px 30px 30px 0;
+
+
+      .number-box {
+
+        .el-input-number {
+          width: 140px;
+        }
+        span {
+          color: #666;
+          padding-left:10px;
+          //margin-right: 10px;
+          width: 60px;
+        }
+      }
     }
   }
 
@@ -401,6 +416,9 @@ const addCart = () => {
 
 .btn {
   margin-top: 20px;
+  width: 190px;
+  height: 50px;
+  margin-left: 10px;
 
 }
 

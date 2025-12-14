@@ -42,10 +42,10 @@ export const useCartStore = defineStore('cart', () => {
   const delCart = async (skuId) => {
     if(isLogin.value) {
       // 登录
-      await delCartAPI([skuId])
-      await updateLoginCartList()
+      // await delCartAPI([skuId])
+      // await updateLoginCartList()
     } else {
-      cartList.value = cartList.value.filter(item => item.skuId != skuId)
+      cartList.value = cartList.value.filter(item => item.skuId !== skuId)
     }
   }
 
