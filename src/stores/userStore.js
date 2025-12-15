@@ -1,5 +1,5 @@
 import api from '@/api/loginApi.js'
-// import { mergeCartAPI } from '@/apis/cart'
+import cartApi from '@/api/cartApi'
 import {useCartStore} from '@/stores/cartStore'
 
 export const useUserStore = defineStore(
@@ -17,17 +17,17 @@ export const useUserStore = defineStore(
       const res = await api.login(data)
       userInfo.value = res.result
 
-      // 合并购物车
-      // await mergeCartAPI(cartStore.cartList.map(item => {
-      //   return {
-      //     skuId: item.skuId,
-      //     selected: item.selected,
-      //     count: item.count
-      //   }
-      // }))
+      //合并购物车
+      await cartApi.mergeCart(cartStore.cartList.map(item => {
+        return {
+          skuId: item.skuId,
+          selected: item.selected,
+          count: item.count
+        }
+      }))
 
-      // 更新购物车列表
-      // cartStore.updateLoginCartList()
+      //更新购物车列表
+      cartStore.updateLoginCartList()
     }
 
     // 清除用户信息
