@@ -1,20 +1,18 @@
-// import { useUserStore } from '@/stores/userStore.js'
-// import { delCartAPI, findNewCartListAPI, insertCart, updateCartAPI } from '@/apis/cart'
+import { useUserStore } from '@/stores/userStore.js'
+import api from '@/api/cart'
 
 export const useCartStore = defineStore('cart', () => {
 
-  //   // 获取用户信息
-//   const userStore.js = useUserStore()
-//   // 是否登录
-//   const isLogin = computed(() => userStore.js.userInfo.token)
-  const isLogin = true;
-//   // 获取登录后最新购物车列表
-//   const updateLoginCartList = async () => {
-//     const res = await findNewCartListAPI()
-//     cartList.value = res.result
-//   }
-//
-//
+    // 获取用户信息
+  const userStore = useUserStore()
+  // 是否登录
+  const isLogin = computed(() => userStore.userInfo.token)
+  // 获取登录后最新购物车列表
+  const updateLoginCartList = async () => {
+    const res = await api.findNewCartListAPI() // ok
+    cartList.value = res.result
+  }
+
 
   const cartList = ref([])
   // 添加购物车
@@ -22,8 +20,8 @@ export const useCartStore = defineStore('cart', () => {
     const { skuId, count } = goods
     if(isLogin.value) {
       // 登录
-      await insertCart({ skuId, count })
-      await updateLoginCartList()
+      await api.insertCart({ skuId, count }) // ok
+      await updateLoginCartList() // ok
     } else {
       // 未登录
       // 判断商品是否在购物车
@@ -42,8 +40,8 @@ export const useCartStore = defineStore('cart', () => {
   const delCart = async (skuId) => {
     if(isLogin.value) {
       // 登录
-      // await delCartAPI([skuId])
-      // await updateLoginCartList()
+      await api.delCartAPI([skuId]) //ok
+      await updateLoginCartList()
     } else {
       cartList.value = cartList.value.filter(item => item.skuId !== skuId)
     }
@@ -60,7 +58,7 @@ export const useCartStore = defineStore('cart', () => {
   const updateCart = async (goods) => {
     const { skuId, count, selected } = goods
     if(isLogin.value) {
-      await updateCartAPI(skuId, { count, selected })
+      await api.updateCartAPI(skuId, { count, selected }) // ok
     }
   }
 
@@ -101,7 +99,7 @@ export const useCartStore = defineStore('cart', () => {
     addCart,
     delCart,
     checkAll,
-    // updateLoginCartList,
+    updateLoginCartList,
     clearCart,
     updateCart
   }
@@ -116,35 +114,3 @@ export const useCartStore = defineStore('cart', () => {
 
 )
 
-
-// export const useCartStore = defineStore('cart', () => {
-//
-
-
-
-
-
-//   // 返回数据
-//   return {
-//     // 属性
-//     cartList,
-//     allCount,
-//     allPrice,
-//     isAll,
-//     selectedCount,
-//     selectedPrice,
-//     // 方法
-//     addCart,
-//     delCart,
-//     checkAll,
-//     updateLoginCartList,
-//     clearCart,
-//     updateCart
-//   }
-// },
-//   {
-//     // pinia持久化
-//     persist: true
-//   }
-//
-// )

@@ -140,7 +140,7 @@ let skuObj = {}
 
 // 接收从sku第三方组件中定义方法，接收的参数有skuId、price、oldPrice、inventory和specsText
 const skuChange = (sku) => {
-  console.log(sku)
+  // console.log(sku)
   skuObj = sku
 }
 
