@@ -131,8 +131,7 @@ const getCheckInfo = async () => {
   const res = await api.getCheckInfo()
   checkInfo.value = res.result
   // 获取默认地址
-  const defaultAddr = checkInfo.value.userAddresses.find(item => item.isDefault === 0)
-  curAddress.value = defaultAddr
+  curAddress.value = checkInfo.value.userAddresses.find(item => item.isDefault === 0)
 }
 
 onMounted(() => getCheckInfo())

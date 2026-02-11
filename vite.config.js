@@ -21,6 +21,12 @@ export default defineConfig({
         "vue-router",
         "pinia",
       ],
+      // 👇 关键：必须设置 enabled: true
+      eslintrc: {
+        enabled: true,                 // ← 必须为 true
+        filepath: './.eslintrc-auto-import.json', // 默认路径
+        globalsPropValue: true,        // 全局变量设为 true（可读写）
+      },
       resolvers: [ElementPlusResolver()],
     }),
     Components({
